@@ -9,11 +9,12 @@
   <body>
   	<clearfix>
         <div id="login">
-		<%= form_for @signin, :action => :create do |f| %>
+		<%= form_for(:signin, :url => signins_path) do |f| %>
         	<div id="pic1">
         	</div>
-        
+            <a>       <%=h flash[:error1] %> </a>
         	<div id="logintitle">
+        		
         		<b> Sign In to B-hive </b>
         	</div>
         

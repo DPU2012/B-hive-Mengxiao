@@ -8,9 +8,10 @@
   <body>
   	<clearfix>
 	<div id=signup>
-		<b>Sign up for B-hive</b>
+		<a> <%=h flash[:error] %> </a> <br/>
+ 		<b>Sign up for B-hive</b>
 	</div>
-		<%= form_for @signup, :action => :create do |f| %>
+		<%= form_for(:signup, :url => signups_path) do |f| %>
 
 		<div id=signupbox>
 		<ul><d>
@@ -22,9 +23,9 @@
 			<li>  &nbsp  </li>
 			Re-enter Email: <%= f.text_field :retype_email %> <br/>
 			<li>  &nbsp  </li>
-			Password: <%= f.text_field :password %> <br/>
+			Password: <%= f.password_field :password %> <br/>
 			<li>  &nbsp  </li>			
-			Re-enter Password: <%= f.text_field :retype_password %> <br/>
+			Re-enter Password: <%= f.password_field :retype_password %> <br/>
 			<li>  &nbsp  </li>
 			I am <%= f.select :sex, options_for_select([['Select Gender', ''],['Male','m'],['Female','f']]) %><br />
 			<li>  &nbsp  </li>

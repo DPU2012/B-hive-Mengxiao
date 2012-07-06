@@ -13,8 +13,8 @@ Bhive1::Application.routes.draw do
 
   get "signups/show"
 
-  resources :signups
-  resources :signins
+  resources :signups, :only => [:index, :create, :show]
+  resources :signins, :only => [:index, :create, :show]
   
   match "/signup", to: 'signups#index'
   match "/signin", to: 'signins#index'

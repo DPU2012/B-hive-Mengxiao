@@ -6,4 +6,6 @@ class Signin < ActiveRecord::Base
   username_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :username, :presence => true, :format => {:with => username_regex}, :uniqueness => {:case_sensitive => false}
 
+
+
 end
