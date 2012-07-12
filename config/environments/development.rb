@@ -34,4 +34,20 @@ Bhive1::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+  
+  config.action_mailer.raise_delivery_errors = true
+
+  # set delivery method to :smtp, :sendmail or :test
+  config.action_mailer.delivery_method = :smtp
+
+  # these options are only needed if you choose smtp delivery
+  config.action_mailer.smtp_settings = {
+  	:address        => 'smtp.google.com',
+  	:port           => 587,
+  	:domain         => 'www.gmail.com',
+  	:authentication => 'plain',
+  	:user_name      => 'letsbhive',
+  	:password       => 'dpureu12'
+  }
+  
 end

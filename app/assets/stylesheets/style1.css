@@ -4,10 +4,11 @@
     
       body {
         margin: 0;
-        margin-bottom: 25px;
+        margin-bottom: 0px;
         padding: 0;
         
-        background-image: url("bg.jpg");
+        background-image: url("bg2.png");
+        background-size:1400px, 900px;
         background-repeat:no-repeat;
         
         font-family: "Lucida Grande", "Bitstream Vera Sans", "Verdana";
@@ -33,7 +34,8 @@
       b {
       	font-size: 40px;
       	font-family: "Arial", "Helvetica", "sans-serif";
-      	color: #38D9C4
+      	color: #AB76C2
+      	
       	}
       	
       c	{
@@ -53,14 +55,14 @@
         margin: 0;
         margin-left: auto;
         margin-right: auto;
-        height:800px
+        height:700px
       }
 
       #content {
-        margin-left:120px;
+        margin-left:130px;
         margin-top:20px;
         background-color: white;
-        border: 3px solid #FF9965;
+        border: 3px solid #672684;
         border-top: none;
         border-bottom: none;
         padding: 25px;
@@ -118,7 +120,7 @@
       }	
       	
       #login {
-        border-top: 3px solid #FF9965;
+        border-top: 3px solid #672684;
         margin-top: 25px;
         padding-top: 15px;
       }
@@ -138,7 +140,7 @@
 	#signin{
 		margin-top: 20px;
 		margin-left:40px;
-		background:#38D9C4;
+		background:#AB76C2;
 		padding-left:10px;
 		padding-right:0px;
 		padding-top:10px;
@@ -153,7 +155,7 @@
 
       #footer {
 
-    	color: #D3AD71;
+    	color: #532E63;
    	 	font-family: "Calibri",Times,serif;
   	 	font-size: 18px;
   	  	left: 75%;
@@ -165,7 +167,7 @@
       
       
     	#signup {
-        border-top: 3px solid #FF9965;
+        border-top: 3px solid #672684;
         margin-top: 25px;
         padding-top: 15px;
         text-align: center;
