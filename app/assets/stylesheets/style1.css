@@ -7,7 +7,7 @@
         margin-bottom: 0px;
         padding: 0;
         
-        background-image: url("bg2.png");
+        background-image: url("bg4.png");
         background-size:1400px, 900px;
         background-repeat:no-repeat;
         
@@ -34,7 +34,7 @@
       b {
       	font-size: 40px;
       	font-family: "Arial", "Helvetica", "sans-serif";
-      	color: #AB76C2
+      	color: #40B3CE
       	
       	}
       	
@@ -60,16 +60,16 @@
 
       #content {
         margin-left:130px;
-        margin-top:20px;
+        margin-top:px;
         background-color: white;
-        border: 3px solid #672684;
+        border: 3px solid #0C60A5;
         border-top: none;
         border-bottom: none;
         padding: 25px;
         width: 1080px;
-        height: 680px;
-        
-        border-radius: 50px;
+        height: 720px;
+ 
+        'border-radius: 20px;'
       }
       
       #title{
@@ -100,7 +100,7 @@
       
       #pic1{
       float:left;
-      background-image: url("pic-new.jpg");
+      background-image: url("social-1.png");
       background-size:500px, 400px;
       background-repeat:no-repeat;
       width:500px;
@@ -120,7 +120,7 @@
       }	
       	
       #login {
-        border-top: 3px solid #672684;
+        border-top: 3px solid #67A1D2;
         margin-top: 25px;
         padding-top: 15px;
       }
@@ -140,7 +140,7 @@
 	#signin{
 		margin-top: 20px;
 		margin-left:40px;
-		background:#AB76C2;
+		background:#40B3CE;
 		padding-left:10px;
 		padding-right:0px;
 		padding-top:10px;
@@ -155,7 +155,7 @@
 
       #footer {
 
-    	color: #532E63;
+    	color: #26557C;
    	 	font-family: "Calibri",Times,serif;
   	 	font-size: 18px;
   	  	left: 75%;
@@ -167,7 +167,7 @@
       
       
     	#signup {
-        border-top: 3px solid #672684;
+        border-top: 3px solid #67A1D2;
         margin-top: 25px;
         padding-top: 15px;
         text-align: center;

@@ -5,6 +5,7 @@ class UserMailer < ActionMailer::Base
   	@name = name
   	@email = email
   	@email2 = email2
+  	@url = "http://www.google.com"
   	mail(:to => @email2, :subject => "Email from Bhive")
   end
 end
