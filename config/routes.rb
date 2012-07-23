@@ -1,6 +1,12 @@
 Bhive1::Application.routes.draw do
  
  
+  get "customization/index"
+
+  get "customization/create"
+
+  get "customization/show"
+
   get "signins/index"
   
   post "signins/create"

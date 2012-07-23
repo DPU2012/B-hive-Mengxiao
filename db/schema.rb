@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120709184720) do
+ActiveRecord::Schema.define(:version => 20120719182013) do
 
   create_table "signins", :force => true do |t|
     t.string   "username"
@@ -26,7 +26,6 @@ ActiveRecord::Schema.define(:version => 20120709184720) do
     t.string   "first_name"
     t.string   "last_name"
     t.string   "email"
-    t.string   "retype_email"
     t.string   "password"
     t.string   "retype_password"
     t.string   "sex"
@@ -39,6 +38,9 @@ ActiveRecord::Schema.define(:version => 20120709184720) do
     t.string   "Day"
     t.string   "Month"
     t.string   "Year"
+    t.string   "role"
+    t.integer  "User_Id"
+    t.string   "status"
   end
 
 end

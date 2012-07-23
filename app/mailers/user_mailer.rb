@@ -1,7 +1,7 @@
 class UserMailer < ActionMailer::Base
   default :from => "letsbhive@gmail.com"
   
-  def comments_email(name,email,email2)
+  def registration_email(name,email,email2)
   	@name = name
   	@email = email
   	@email2 = email2

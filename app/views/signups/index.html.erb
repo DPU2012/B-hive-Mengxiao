@@ -8,24 +8,19 @@
   <body>
   	<clearfix>
 	<div id=signup>
-		<a> <%=h flash[:error] %> </a> <br/>
+		<%=h flash[:error] %>  <br/>
  		<b>Sign up for B-hive</b>
 	</div>
-		<%= form_for(:signup, :url => signups_path) do |f| %>
-
+		
+	 <%= form_for(:signup, :url => signups_path) do |f| %>
+	 
 		<div id=signupbox>
 		<ul><d>
-			<li> First Name: </d> <%= f.text_field :first_name %> <br/></li>
-			<% if flash[:message] -%>
-				format.html { render :action => "index" }
-  				<p><%=h flash[:error1] %></p>
-			<% end -%>
+			First Name: <%= f.text_field :first_name %> 
 			<li>  &nbsp  </li>
-			<li>Last Name: <%= f.text_field :last_name %> <br/></li>
+			Last Name: <%= f.text_field :last_name %>
 			<li>  &nbsp  </li>
 			Your Email: <%= f.text_field :email %> <br/>
-			<li>  &nbsp  </li>
-			Re-enter Email: <%= f.text_field :retype_email %> <br/>
 			<li>  &nbsp  </li>
 			Password: <%= f.password_field :password %> <br/>
 			<li>  &nbsp  </li>			
@@ -38,16 +33,28 @@
 			<%= f.select :month, options_for_select(Signup::MONTHS), :include_blank => "Month" %>
 			<%= f.select :year, options_for_select(Signup::YEAR_RANGE), :include_blank =>"Year" %><br />
 			<li>  &nbsp  </li>
-
+			I am the <%= f.select :role, options_for_select([['Select Role', ''],['Parent','p'],['Teenager','t']]) %>
+			<li>  &nbsp  </li>
 			Parent's or child's email:
-			<%= f.text_field :email2 %> <br/>
-			<li>  &nbsp  </li>		
+			<%= f.text_field :email2 %> <br/>	
 			</d>	
 		</ul>
 			<%= f.submit "Submit" %> <br/>
 		</div>
 
 		<% end %>
+	<div id=errorbox>		
+		<% if @signup.errors.any? %>
+		
+		<h2> Errors: </h2>
+		<ul>
+			<% @signup.errors.full_messages.each do |message|%>
+				<li> <%= message %></li>
+			<% end %>
+		</ul>
+		
+		<% end %>
+	</div>	
 	
 
     </clearfix>

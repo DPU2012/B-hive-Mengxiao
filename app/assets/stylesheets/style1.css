@@ -174,16 +174,26 @@
       }
       
        #signupbox{
+       float: left;
        margin-top:px;
        padding:15px;
-       margin-right: 400px;
+       margin-left: 0px;
+       margin-right:100px;
        text-align:right;
+       width:400px;
+
        }
       
 	    d{
         font-size: 15px;
       	font-family: "Arial", "Helvetica", "sans-serif";
       	color: #000
+      	
+      	#errorbox{
+      	width: px;
+      	float:right;
+      	margin-left:100px;
+      	}
       }
 
 

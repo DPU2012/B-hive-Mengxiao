@@ -2,10 +2,9 @@ require 'digest'
 
 class Signup < ActiveRecord::Base
   attr_accessor :password, :day, :month, :year
-  attr_accessible :email, :email2, :first_name, :last_name, :password, :retype_email, :retype_password, :sex, :day, :month, :year
+  attr_accessible :email, :email2, :first_name, :last_name, :password, :retype_password, :sex, :day, :month, :year, :role, :status, :User_Id, 
   
   before_save { |signup| signup.email = email.downcase }
-  before_save { |signup| signup.retype_email = retype_email.downcase }
   before_save { |signup| signup.email2 = email2.downcase }
   before_save :encrypt_password
 
@@ -23,12 +22,13 @@ class Signup < ActiveRecord::Base
   alpha_numeric_regix = /^[a-zA-Z0-9_]*$/
 
 
-  validates :first_name, :presence => true, :length => {:minimum => 2, :maximum => 15}, :format => {:with => alpha_regex, :message => "Your first name must contain letters only"}
+  validates :first_name, :presence => true, :length => {:minimum => 2, :maximum => 15}, :format => {:with => alpha_regex}
   validates :last_name, :presence => true, :length => {:maximum => 20}
   validates :email, :presence => true, :format => {:with => email_regex}, :uniqueness => {:case_sensitive => false}
-  validates :email2, :presence => true, :format => {:with => email_regex}, :uniqueness => {:case_sensitive => false}
+  validates :email2, :format => {:with => email_regex}, :uniqueness => {:case_sensitive => false}
   validates :password, :presence => true, :confirmation => true, :length => {:within => 6..40}
  
+
  
   def has_password? (password)
   	encrypted_password == encrypt(password)
@@ -41,7 +41,7 @@ class Signup < ActiveRecord::Base
   	return signup if signup.has_password?(submitted_password)
   end
 
-    	  
+	  
   private
   def encrypt_password
   	self.salt = make_salt unless has_password?(password)

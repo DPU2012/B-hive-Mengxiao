@@ -3,3 +3,4 @@ class AddYearToSignup < ActiveRecord::Migration
     add_column :signups, :Year, :string
   end
 end
+k8
