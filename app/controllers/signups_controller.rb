@@ -6,7 +6,9 @@ class SignupsController < ApplicationController
   def create
     @signup = Signup.new(params[:signup])
     @email = params[:signup][:email]
-    @name = params[:signup][:first_name]
+    @first_name = params[:signup][:first_name]
+    @last_name = params[:signup][:last_name]
+    @role = params[:signup][:role]
     @email2 = params[:signup][:email2]
     
     
@@ -21,7 +23,7 @@ class SignupsController < ApplicationController
 		else
 			@signup.update_attribute(:User_Id, @signup2.User_Id)
 			@signup.status = "complete"
-			@signup2.update_attribute(:status, "complete")
+			@signup2.update_column(:status, "complete")
 			#@signup2.save!
 		end
 	end
@@ -38,7 +40,11 @@ class SignupsController < ApplicationController
   	end
   	
    if @signup.save
-  		UserMailer.registration_email(@name, @email, @email2).deliver
+   		if @signup.status == "pending"
+  			UserMailer.registration_email1(@first_name, @last_name, @role, @email, @email2).deliver
+  		else
+  			UserMailer.registration_email2(@first_name, @last_name, @role, @email, @email2).deliver
+  		end
   		render :action => :show
   	else
   		render 'index'

@@ -33,7 +33,7 @@
 			<%= f.select :month, options_for_select(Signup::MONTHS), :include_blank => "Month" %>
 			<%= f.select :year, options_for_select(Signup::YEAR_RANGE), :include_blank =>"Year" %><br />
 			<li>  &nbsp  </li>
-			I am the <%= f.select :role, options_for_select([['Select Role', ''],['Parent','p'],['Teenager','t']]) %>
+			I am the <%= f.select :role, options_for_select([['Select Role', ''],['Parent','parent'],['Teenager','teenager']]) %>
 			<li>  &nbsp  </li>
 			Parent's or child's email:
 			<%= f.text_field :email2 %> <br/>	

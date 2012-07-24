@@ -9,12 +9,11 @@ class SigninsController < ApplicationController
   	#render :action => :show
   	
   	signup = Signup.authenticate(params[:signin][:username], params[:signin][:password])
-  	signup2 = Signup.find_by_email(params[:signin][:username])
   	if signup.nil?
   		flash.now[:error1] = "Invalid email/password combination"
   		render 'index'
 	else
-		if signup2.status = "pending" #and signup.role = "t"
+		if signup.status == "pending" and signup.role == "teenager"
 			flash.now[:error2] = "You account is pending.  Please wait until your parent signs up." 
 			render'index'
 		else

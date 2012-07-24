@@ -1,5 +1,5 @@
 class Signin < ActiveRecord::Base
-  attr_accessible :password, :username
+  attr_accessible :password, :username, :sex
   
   before_save { |signin| signin.username = username.downcase }
 
