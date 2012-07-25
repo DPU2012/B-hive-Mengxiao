@@ -7,6 +7,7 @@ class Signup < ActiveRecord::Base
   before_save { |signup| signup.email = email.downcase }
   before_save { |signup| signup.email2 = email2.downcase }
   before_save :encrypt_password
+  before_save :create_remember_token
 
   
   #birthday
@@ -60,7 +61,9 @@ class Signup < ActiveRecord::Base
   	Digest::SHA2.hexdigest(string)
   end
   
-  
+  def create_remember_token    
+	self.remember_token = SecureRandom.urlsafe_base64
+  end
   
   
   

@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title></title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= stylesheet_link_tag    "signin", :media => "all" %>
   <%= stylesheet_link_tag    "style1", :media => "all" %>
@@ -10,11 +9,22 @@
   
 </head>
 <body>
+
 <div id="page">
+    	<div id="header">
+    		<%= link_to "Help", {:controller => 'help', :action => :index}, :style => "color:white" %> &nbsp
+            <% if signed_in? %>
+                	<%= link_to "Profile", {}, :style => "color:white" %> &nbsp  <%= link_to "Sign out", {:controller => 'signins', :action => :destroy}, method: "delete",:style => "color:white" %> &nbsp &nbsp &nbsp 
+          	<% else %>
+            	<%= link_to "Sign in", {:controller => 'signins', :action => :index}, :style => "color:white" %> &nbsp &nbsp &nbsp 
+          	<% end %>
+    	</div>
     <div id="content">
+
+    	
     	<div id="title">
     		<div id="logo">
-        		<%= image_tag("beehive logo-tagline-2.jpg", :class => "bhive") %>
+        		<%= image_tag("beehive_logo.jpg", :class => "bhive") %>
         	</div>
         	<div id="tagline">
         	</div>
@@ -25,7 +35,7 @@
 <%= yield %>
 	
 	</div>
-	<div id="footer"> <u>About us</u> | <u>Contact us </u></div>
+	<div id="footer"> <%= link_to "About us", {:controller => 'aboutus', :action => :index}, :style => "color:#26557C" %> | <%= link_to "Contact us", {:controller => 'contactus', :action => :index}, :style => "color:#26557C" %></div>
 </div>
 </body>
 </html>

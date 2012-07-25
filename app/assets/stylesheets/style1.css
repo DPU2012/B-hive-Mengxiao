@@ -7,7 +7,7 @@
         margin-bottom: 0px;
         padding: 0;
         
-        background-image: url("bg4.png");
+        background-image: url("bg5.png");
         background-size:1400px, 900px;
         background-repeat:no-repeat;
         
@@ -23,7 +23,7 @@
 	
       h1 {
         font-size: 28px;
-        color: #38D9C4;
+        color: #40B3CE;
       }
 
       a  {
@@ -55,8 +55,28 @@
         margin: 0;
         margin-left: auto;
         margin-right: auto;
+        margin-top: 50px;
         height:700px
       }
+      
+      
+    	#header {
+    	  margin-left:133px;
+      	  background-color: #67A1D2;
+		  color: white;
+   	 	  font-family: "Calibri",Times,serif;
+   	 	  font-size: 17px;
+   	 	  padding-top: 10px;
+   	 	  position: absolute;
+   	 	  height: 30px;
+   	 	  width:1130px;
+   	 	  
+   	 	  text-align:right;
+      	}
+      	ht {
+      	font-family: "Calibri",Times,serif;
+      	color: white;
+      	}
 
       #content {
         margin-left:130px;
@@ -74,7 +94,7 @@
       
       #title{
       
-      margin-top: 10px;
+      margin-top: 30px;
       width: 1090px;
       height:150px;
       }
@@ -82,7 +102,8 @@
       #logo{
       	float:left; 
       	margin-right:0px; 
-      	padding-top:0; 
+      	padding-top:0;
+      	width: 704px;
 
       	}
       	
@@ -170,7 +191,7 @@
         border-top: 3px solid #67A1D2;
         margin-top: 25px;
         padding-top: 15px;
-        text-align: center;
+        text-align: ;
       }
       
        #signupbox{
@@ -194,6 +215,8 @@
       	float:right;
       	margin-left:100px;
       	}
+      	
+
       }
 
 

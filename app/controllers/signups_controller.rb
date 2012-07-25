@@ -1,4 +1,6 @@
 class SignupsController < ApplicationController
+	include SigninsHelper
+
   def index
   	 @signup = Signup.new
   end
@@ -40,10 +42,14 @@ class SignupsController < ApplicationController
   	end
   	
    if @signup.save
-   		if @signup.status == "pending"
+   		if @signup.status == "pending" 
   			UserMailer.registration_email1(@first_name, @last_name, @role, @email, @email2).deliver
+  			if @signup.role == "parent"
+  				sign_in @signup
+  			end
   		else
   			UserMailer.registration_email2(@first_name, @last_name, @role, @email, @email2).deliver
+  			sign_in @signup
   		end
   		render :action => :show
   	else

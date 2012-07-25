@@ -1,6 +1,24 @@
 Bhive1::Application.routes.draw do
  
  
+  get "help/index"
+
+  get "help/create"
+
+  get "help/show"
+
+  get "contactus/index"
+
+  get "contactus/create"
+
+  get "contactus/show"
+
+  get "aboutus/index"
+
+  get "aboutus/create"
+
+  get "aboutus/show"
+
   get "customization/index"
 
   get "customization/create"
@@ -12,6 +30,8 @@ Bhive1::Application.routes.draw do
   post "signins/create"
 
   get "signins/show"
+  
+   get "signins/destroy"
 
   get "signups/index"
 
@@ -20,10 +40,11 @@ Bhive1::Application.routes.draw do
   get "signups/show"
 
   resources :signups, :only => [:index, :create, :show]
-  resources :signins, :only => [:index, :create, :show]
+  resources :signins, :only => [:index, :create, :destroy, :show]
   
   match "/signup", to: 'signups#index'
   match "/signin", to: 'signins#index'
+  match '/signout', to: 'signins#destroy', via: :delete
   
   #get "signup/index"
   #post "signup/index"

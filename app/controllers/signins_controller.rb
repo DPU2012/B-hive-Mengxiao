@@ -1,6 +1,8 @@
 class SigninsController < ApplicationController
+	include SigninsHelper
+	
   def index
-    @signin = Signin.new
+  
   end
 
   def create
@@ -17,13 +19,21 @@ class SigninsController < ApplicationController
 			flash.now[:error2] = "You account is pending.  Please wait until your parent signs up." 
 			render'index'
 		else
-			signin[:remember_token] = signup.id #this stores the id of the user who's logged in the session
+			#signin[:remember_token] = signup.id #this stores the id of the user who's logged in the session
+			sign_in signup
 			render :action => :show
 			#redirect to :			
 		end	
 	end
   end  
+  
+    def destroy
+    sign_out
+    render 'index'
+    end
 
   def show
   end
+  
+
 end
